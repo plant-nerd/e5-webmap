@@ -10,4 +10,7 @@ fv.seek(0)
 d = csv.DictReader(fv, dialect=dialect)
 rows = []
 for line in d:
-    rows.append(line)
+    for row in line:
+        if row == 'Status':
+            if row != 'Historical':
+                rows.append(line)
