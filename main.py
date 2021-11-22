@@ -12,4 +12,13 @@ rows = []
 for line in d:
         if line['Status'] != 'Historical' and line['Latitude'] != '' and line['Longitude'] != '':
             rows.append(line)
-print(rows)
+
+icon_cadetblue = folium.Icon(color='cadetblue')
+
+map = folium.Map(location=(35.61,-82.44),zoom_start = 5)
+for line in rows:
+    icon_cadetblue = folium.Icon(color='cadetblue')
+    marker = folium.Marker(location=(line['Latitude'], line['Longitude']), popup=line['Volcano Name'], icon=icon_cadetblue)
+    map.add_child(marker)
+
+map.save('map1.html')
