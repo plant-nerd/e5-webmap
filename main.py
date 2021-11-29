@@ -59,6 +59,7 @@ hydrothermal_field = 0
 unknown = 0
 for line in rows:
     if line['Type'] == 'Stratovolcano':
+        #add_marker_to_map(map, location=(line['Latitude'], line['Longitude'], popup=(line['Volcano Name'], color='red')
         marker = folium.Marker(location=(line['Latitude'], line['Longitude']), popup=(line['Volcano Name'], line['Type']), icon = icon_red)
         map.add_child(marker)
         stratovolcano += 1
