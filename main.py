@@ -14,6 +14,7 @@ for line in d:
             rows.append(line)
 
 icon_cadetblue = folium.Icon(color='cadetblue')
+icon_red = folium.Icon(color='red')
 
 map = folium.Map(location=(35.61,-82.44),zoom_start = 5)
 for line in rows:
